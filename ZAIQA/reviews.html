@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Read what our customers say about Zaiqa Restaurant. Authentic Pakistani cuisine reviews.">
+    <meta name="theme-color" content="#E63946">
+    <title>Reviews - Zaiqa Restaurant</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌶️</text></svg>">
+    <style>
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .review-card {
+            background: var(--gray);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .review-form-container {
+            background: var(--darker);
+            padding: 3rem;
+            border-radius: 20px;
+            margin-top: 4rem;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">ZAI<span>QA</span></div>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-controls="main-nav" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav>
+            <ul class="nav-links" id="main-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reviews.html" class="active" aria-current="page">Reviews</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-group">
+                    <a href="menu.html" class="nav-btn">Order Now</a>
+                    <a href="#" class="cart-icon-container" aria-label="View Cart">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                        ☀️
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div
+            style="position: relative; overflow: hidden; height: 300px; display: flex; align-items: center; justify-content: center;">
+            <div class="hero-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+                <img src="images/menu_kebabs_1764280918109.png" alt="Happy Customers"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: center;" fetchpriority="high">
+            </div>
+            <div
+                style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index: 1;">
+            </div>
+            <h1 style="position: relative; z-index: 2; color: white;">Customer Reviews</h1>
+        </div>
+
+        <section class="reviews-section" style="padding: 5rem 5%;">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <span>What They Say</span>
+                    <h2>Testimonials</h2>
+                </div>
+
+                <div class="reviews-grid">
+                    <div class="review-card animate-on-scroll delay-100">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Absolutely the best Pakistani food I've had in years. The Nihari was
+                            rich and flavorful, just like home."</p>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">A</div>
+                            <div>
+                                <h4>Ali Khan</h4>
+                                <span style="font-size: 0.9rem; color: var(--text-gray);">Local Guide</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card animate-on-scroll delay-200">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Great service and amazing ambiance. The staff was very attentive and the
+                            food came out hot and fresh."</p>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">S</div>
+                            <div>
+                                <h4>Sarah Jenkins</h4>
+                                <span style="font-size: 0.9rem; color: var(--text-gray);">Food Blogger</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card animate-on-scroll delay-300">
+                        <div class="stars">★★★★☆</div>
+                        <p class="review-text">"Loved the BBQ platter. The spices were perfect. Delivery was a bit slow
+                            but worth the wait."</p>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">M</div>
+                            <div>
+                                <h4>Mike Ross</h4>
+                                <span style="font-size: 0.9rem; color: var(--text-gray);">Regular Customer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-form-container animate-on-scroll">
+                    <div class="section-title" style="text-align: left; margin-bottom: 2rem;">
+                        <span>Share Your Experience</span>
+                        <h2>Write a Review</h2>
+                    </div>
+                    <form id="review-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="review-name">Name</label>
+                            <input type="text" id="review-name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="review-rating">Rating</label>
+                            <select id="review-rating" name="rating"
+                                style="width: 100%; padding: 1.2rem; background: var(--darker); border: 1px solid #444; border-radius: 12px; color: white;"
+                                required>
+                                <option value="5">★★★★★ (Excellent)</option>
+                                <option value="4">★★★★☆ (Good)</option>
+                                <option value="3">★★★☆☆ (Average)</option>
+                                <option value="2">★★☆☆☆ (Poor)</option>
+                                <option value="1">★☆☆☆☆ (Terrible)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="review-text">Review</label>
+                            <textarea id="review-text" name="review" rows="5" placeholder="Share your thoughts..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>ZAIQA</h3>
+                <div class="footer-info">
+                    <p>Authentic Pakistani Cuisine</p>
+                    <p>Open Daily: 11am - 11pm</p>
+                </div>
+                <div class="newsletter-form" style="margin-top: 2rem;">
+                    <h4 style="color: white; margin-bottom: 1rem;">Subscribe to our Newsletter</h4>
+                    <form action="#" style="display: flex; gap: 0.5rem;">
+                        <input type="email" placeholder="Your Email"
+                            style="padding: 0.8rem; border-radius: 50px; border: none; flex: 1;" required>
+                        <button type="submit"
+                            style="background: var(--primary); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 50px; cursor: pointer; font-weight: 600;">Go</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <div class="footer-info">
+                    <p>📞 <a href="tel:03272591778">03272591778</a></p>
+                    <p>📍 123 Food Street, Flavor Town</p>
+                    <p>📧 <a href="mailto:hello@zaiqa.com">hello@zaiqa.com</a></p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Find Us</h3>
+                <div
+                    style="width: 100%; height: 150px; background-color: var(--gray); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #666;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d924234.6302710465!2d66.5949955172274!3d25.19338946995641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e06651d4bbf%3A0x9cf92f4455504c25!2sKarachi%2C%20Karachi%20City%2C%20Sindh!5e0!3m2!1sen!2s!4v1709228392819!5m2!1sen!2s"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Google Map of Zaiqa Restaurant Location"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 Zaiqa Restaurant. All rights reserved. | Powered by Wizora Studio
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+    <script src="js/script.js" defer></script>
+    <script>
+        // Simple client-side review submission
+        document.getElementById('review-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your review! It has been submitted for moderation.');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
