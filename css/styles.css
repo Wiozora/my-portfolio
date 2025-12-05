@@ -1250,18 +1250,124 @@ footer {
     transform: translateY(-2px);
 }
 
-/* Footer Links Hover */
-.footer-info a {
+/* =========================================
+   PREMIUM GLASS FOOTER
+   ========================================= */
+
+footer {
+    /* Dark Glass Background */
+    background: linear-gradient(to top, #000000, rgba(10, 10, 10, 0.9));
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
+    padding: 6rem 5% 2rem;
     color: white;
-    text-decoration: none;
-    transition: color var(--transition-fast);
+    margin-top: auto;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Background mein halka sa Red Glow */
+footer::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 300px;
+    background: radial-gradient(circle, rgba(230, 57, 70, 0.15), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 4rem;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Headings Styling */
+.footer-col h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Links & Text */
+.footer-info p, .footer-info a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+/* Hover par links slide karein */
 .footer-info a:hover {
     color: var(--primary);
-    text-decoration: underline;
+    transform: translateX(10px); /* Right side slide */
+    text-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
 }
 
+/* Newsletter Input (Modern Glass) */
+.newsletter-form input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.newsletter-form input:focus {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(230, 57, 70, 0.3);
+}
+
+/* --- Cool Map Effect --- */
+.footer-col iframe {
+    border-radius: 20px;
+    filter: grayscale(100%) contrast(1.2) brightness(0.8); /* Pehle Black & White */
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* Container fix (Purana grey box hatane ke liye) */
+.footer-col > div {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    height: 200px !important;
+}
+
+/* Hover par Map Color ho jaye */
+.footer-col:hover iframe {
+    filter: grayscale(0%) contrast(1) brightness(1);
+    transform: scale(1.03);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* Copyright Bar */
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.9rem;
+    text-align: center;
+    padding-top: 2rem;
+    position: relative;
+    z-index: 1;
+}
 /* =========================================
    Product Modal
    ========================================= */
@@ -1408,114 +1514,236 @@ footer {
 }
 
 /* =========================================
-   Features Section (Why Choose Us)
+   iPhone 17 Pro Glass Style Cards
+   (Features & Services Combined)
    ========================================= */
-.features-section {
-    padding: 8rem 5%;
-    background-color: var(--dark);
-    text-align: center;
-}
 
-.features-grid {
+.features-grid, .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    margin-top: 4rem;
+    gap: 2.5rem;
+    margin-top: 2rem;
 }
 
-.feature-card {
-    background: var(--gray);
+.feature-card, .service-card {
+    /* Base Glass: Dark frosted layer */
+    background: rgba(30, 30, 30, 0.4); 
+    
+    /* The Magic: iPhone jaisa Blur effect */
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    
+    /* Smooth Apple-style Corners */
+    border-radius: 32px; 
+    
+    /* Titanium Border: Bohot patla aur subtle */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    
     padding: 3rem 2rem;
-    border-radius: 20px;
-    border: 1px solid #333;
-    transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
-    cursor: default;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary);
-    box-shadow: 0 10px 30px rgba(230, 57, 70, 0.2);
-}
-
-.feature-icon {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    display: inline-block;
-    transition: transform var(--transition-fast);
-}
-
-.feature-card:hover .feature-icon {
-    transform: scale(1.2) rotate(5deg);
-}
-
-.feature-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: white;
-}
-
-.feature-card p {
-    color: #ccc;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-/* =========================================
-   Services Section
-   ========================================= */
-.services-section {
-    padding: 8rem 5%;
-    background-color: var(--darker);
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.service-card {
-    background: var(--gray);
-    padding: 2.5rem;
-    border-radius: 20px;
-    text-align: center;
-    transition: all var(--transition-fast);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    background: linear-gradient(145deg, var(--gray), #333);
-    border-color: var(--primary);
+    position: relative;
+    overflow: hidden;
+    text-align: center; /* Center alignment for clean look */
+    
+    /* Smooth Physics Transition */
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    
+    /* Soft Depth Shadow */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.service-icon {
-    font-size: 3rem;
+/* --- Premium Hover Effect --- */
+.feature-card:hover, .service-card:hover {
+    /* Thoda lighter glass ban jaye */
+    background: rgba(50, 50, 50, 0.5);
+    
+    /* Border thoda bright ho (Steel/Silver look) */
+    border-color: rgba(255, 255, 255, 0.3);
+    
+    /* Slight Float */
+    transform: translateY(-8px) scale(1.02);
+    
+    /* Deep Shadow */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Internal Elements Styling --- */
+
+/* Icons: Glass Container ke andar */
+.feature-icon, .service-icon {
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    display: inline-block;
-    transition: transform var(--transition-fast);
+    
+    /* Icon ke peeche ek chota glowing circle */
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+    width: 70px;
+    height: 70px;
+    border-radius: 20px; /* Squircle shape */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: inset 0 0 15px rgba(255,255,255,0.05);
+    transition: transform 0.4s ease;
 }
 
-.service-card:hover .service-icon {
-    transform: scale(1.2) rotate(5deg);
+.feature-card:hover .feature-icon, .service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+    border-color: var(--primary); /* Hover pe brand color aye */
+    box-shadow: 0 0 20px rgba(230, 57, 70, 0.3);
 }
 
-.service-card h3 {
+.feature-card h3, .service-card h3 {
     color: white;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.8rem;
 }
 
-.service-card p {
-    color: #bbb;
+.feature-card p, .service-card p {
+    color: rgba(255, 255, 255, 0.7); /* Greyish Text */
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* --- Glossy Shine Animation on Hover --- */
+.feature-card::after, .service-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        transparent
+    );
+    transform: skewX(-25deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.feature-card:hover::after, .service-card:hover::after {
+    left: 150%; 
+    transition: 0.7s ease-in-out;
+}
+/* =========================================
+   Glass Style Testimonials (Reviews)
+   ========================================= */
+
+/* =========================================
+   HOLOGRAPHIC GLASS TESTIMONIALS (UNIQUE)
+   ========================================= */
+
+.testimonial-grid {
+    gap: 3rem;
+    padding: 2rem 1rem;
+}
+
+.testimonial-card {
+    /* Base: Dark Transparent Glass */
+    background: rgba(20, 20, 20, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+    /* Shape & Border */
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem 2rem;
+    position: relative;
+    overflow: hidden;
+    
+    /* Transitions */
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* --- The Magic: Neon Glow Border on Hover --- */
+.testimonial-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 24px; 
+    padding: 2px; /* Border Thickness */
+    
+    /* Gradient Border (Invisible initially) */
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent); 
+    -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+}
+
+/* Hover Effects */
+.testimonial-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    background: rgba(30, 30, 30, 0.6);
+    box-shadow: 0 20px 60px rgba(230, 57, 70, 0.2); /* Red Ambient Glow */
+    border-color: rgba(230, 57, 70, 0.5); /* Red Tint Border */
+}
+
+/* Stars Styling (Golden Glow) */
+.testimonial-card .stars {
+    color: #ffd700;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Glowing Stars */
+    display: block; /* Ensure it takes a line */
+}
+
+/* Quote Text */
+.testimonial-quote {
+    color: rgba(255, 255, 255, 0.9);
     font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
 }
 
+/* Author Section - Avatar Style */
+.testimonial-footer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+}
+
+/* Avatar Circle (Agar image nahi hai to text circle) */
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), #ff6b6b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
+}
+
+.testimonial-author {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.testimonial-role {
+    color: #888;
+    font-size: 0.85rem;
+    display: block;
+}
 /* =========================================
    Cart & Checkout Styles
    ========================================= */
