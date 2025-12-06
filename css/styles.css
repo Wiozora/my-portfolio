@@ -282,6 +282,13 @@ nav {
     transform: translateY(-2px);
 }
 
+/* Header Right (Cart + Hamburger) */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 /* =========================================
    Hero Section
    ========================================= */
@@ -1047,6 +1054,45 @@ footer {
     .cart-items {
         max-height: 40vh !important;
     }
+
+    /* Mobile Header Layout Fix - PREMIUM GLASS PILL */
+    .header-right {
+        gap: 15px;
+        position: relative;
+        z-index: 2000;
+
+        /* Glass Pill Design */
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 50px;
+        padding: 5px 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Resize logo to fit nicely */
+    .logo {
+        font-size: 1.5rem !important;
+    }
+
+    /* Ensure hamburger is correctly positioned */
+    /* Ensure hamburger is correctly positioned and VISIBLE */
+    .hamburger {
+        display: flex !important;
+        margin-left: 0;
+        padding: 5px;
+        -webkit-tap-highlight-color: transparent;
+        color: white;
+        /* Ensure visible */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hamburger .bar {
+        background-color: white;
+        /* Ensure bars are white */
+    }
 }
 
 @media (max-width: 480px) {
@@ -1257,7 +1303,8 @@ footer {
 footer {
     /* Dark Glass Background */
     background: linear-gradient(to top, #000000, rgba(10, 10, 10, 0.9));
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle top border */
     padding: 6rem 5% 2rem;
     color: white;
     margin-top: auto;
@@ -1302,7 +1349,8 @@ footer::before {
 }
 
 /* Links & Text */
-.footer-info p, .footer-info a {
+.footer-info p,
+.footer-info a {
     color: rgba(255, 255, 255, 0.6);
     font-size: 1.05rem;
     transition: all 0.3s ease;
@@ -1314,7 +1362,8 @@ footer::before {
 /* Hover par links slide karein */
 .footer-info a:hover {
     color: var(--primary);
-    transform: translateX(10px); /* Right side slide */
+    transform: translateX(10px);
+    /* Right side slide */
     text-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
 }
 
@@ -1336,14 +1385,15 @@ footer::before {
 /* --- Cool Map Effect --- */
 .footer-col iframe {
     border-radius: 20px;
-    filter: grayscale(100%) contrast(1.2) brightness(0.8); /* Pehle Black & White */
+    filter: grayscale(100%) contrast(1.2) brightness(0.8);
+    /* Pehle Black & White */
     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Container fix (Purana grey box hatane ke liye) */
-.footer-col > div {
+.footer-col>div {
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
@@ -1355,7 +1405,7 @@ footer::before {
     filter: grayscale(0%) contrast(1) brightness(1);
     transform: scale(1.03);
     border-color: var(--primary);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 /* Copyright Bar */
@@ -1368,6 +1418,7 @@ footer::before {
     position: relative;
     z-index: 1;
 }
+
 /* =========================================
    Product Modal
    ========================================= */
@@ -1518,50 +1569,54 @@ footer::before {
    (Features & Services Combined)
    ========================================= */
 
-.features-grid, .services-grid {
+.features-grid,
+.services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
     margin-top: 2rem;
 }
 
-.feature-card, .service-card {
+.feature-card,
+.service-card {
     /* Base Glass: Dark frosted layer */
-    background: rgba(30, 30, 30, 0.4); 
-    
+    background: rgba(30, 30, 30, 0.4);
+
     /* The Magic: iPhone jaisa Blur effect */
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    
+
     /* Smooth Apple-style Corners */
-    border-radius: 32px; 
-    
+    border-radius: 32px;
+
     /* Titanium Border: Bohot patla aur subtle */
     border: 1px solid rgba(255, 255, 255, 0.08);
-    
+
     padding: 3rem 2rem;
     position: relative;
     overflow: hidden;
-    text-align: center; /* Center alignment for clean look */
-    
+    text-align: center;
+    /* Center alignment for clean look */
+
     /* Smooth Physics Transition */
     transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-    
+
     /* Soft Depth Shadow */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* --- Premium Hover Effect --- */
-.feature-card:hover, .service-card:hover {
+.feature-card:hover,
+.service-card:hover {
     /* Thoda lighter glass ban jaye */
     background: rgba(50, 50, 50, 0.5);
-    
+
     /* Border thoda bright ho (Steel/Silver look) */
     border-color: rgba(255, 255, 255, 0.3);
-    
+
     /* Slight Float */
     transform: translateY(-8px) scale(1.02);
-    
+
     /* Deep Shadow */
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
@@ -1569,30 +1624,35 @@ footer::before {
 /* --- Internal Elements Styling --- */
 
 /* Icons: Glass Container ke andar */
-.feature-icon, .service-icon {
+.feature-icon,
+.service-icon {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    
+
     /* Icon ke peeche ek chota glowing circle */
-    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
     width: 70px;
     height: 70px;
-    border-radius: 20px; /* Squircle shape */
+    border-radius: 20px;
+    /* Squircle shape */
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: inset 0 0 15px rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05);
     transition: transform 0.4s ease;
 }
 
-.feature-card:hover .feature-icon, .service-card:hover .service-icon {
+.feature-card:hover .feature-icon,
+.service-card:hover .service-icon {
     transform: scale(1.1) rotate(5deg);
-    border-color: var(--primary); /* Hover pe brand color aye */
+    border-color: var(--primary);
+    /* Hover pe brand color aye */
     box-shadow: 0 0 20px rgba(230, 57, 70, 0.3);
 }
 
-.feature-card h3, .service-card h3 {
+.feature-card h3,
+.service-card h3 {
     color: white;
     font-size: 1.6rem;
     font-weight: 600;
@@ -1600,36 +1660,39 @@ footer::before {
     margin-bottom: 0.8rem;
 }
 
-.feature-card p, .service-card p {
-    color: rgba(255, 255, 255, 0.7); /* Greyish Text */
+.feature-card p,
+.service-card p {
+    color: rgba(255, 255, 255, 0.7);
+    /* Greyish Text */
     font-size: 1.05rem;
     line-height: 1.6;
     font-weight: 400;
 }
 
 /* --- Glossy Shine Animation on Hover --- */
-.feature-card::after, .service-card::after {
+.feature-card::after,
+.service-card::after {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
     width: 50%;
     height: 100%;
-    background: linear-gradient(
-        to right,
-        transparent,
-        rgba(255, 255, 255, 0.05),
-        transparent
-    );
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.05),
+            transparent);
     transform: skewX(-25deg);
     transition: 0.5s;
     pointer-events: none;
 }
 
-.feature-card:hover::after, .service-card:hover::after {
-    left: 150%; 
+.feature-card:hover::after,
+.service-card:hover::after {
+    left: 150%;
     transition: 0.7s ease-in-out;
 }
+
 /* =========================================
    Glass Style Testimonials (Reviews)
    ========================================= */
@@ -1648,17 +1711,17 @@ footer::before {
     background: rgba(20, 20, 20, 0.4);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    
+
     /* Shape & Border */
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 3rem 2rem;
     position: relative;
     overflow: hidden;
-    
+
     /* Transitions */
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* --- The Magic: Neon Glow Border on Hover --- */
@@ -1666,14 +1729,15 @@ footer::before {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 24px; 
-    padding: 2px; /* Border Thickness */
-    
+    border-radius: 24px;
+    padding: 2px;
+    /* Border Thickness */
+
     /* Gradient Border (Invisible initially) */
-    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent); 
-    -webkit-mask: 
-       linear-gradient(#fff 0 0) content-box, 
-       linear-gradient(#fff 0 0);
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     opacity: 0.5;
@@ -1684,8 +1748,10 @@ footer::before {
 .testimonial-card:hover {
     transform: translateY(-10px) scale(1.02);
     background: rgba(30, 30, 30, 0.6);
-    box-shadow: 0 20px 60px rgba(230, 57, 70, 0.2); /* Red Ambient Glow */
-    border-color: rgba(230, 57, 70, 0.5); /* Red Tint Border */
+    box-shadow: 0 20px 60px rgba(230, 57, 70, 0.2);
+    /* Red Ambient Glow */
+    border-color: rgba(230, 57, 70, 0.5);
+    /* Red Tint Border */
 }
 
 /* Stars Styling (Golden Glow) */
@@ -1693,8 +1759,10 @@ footer::before {
     color: #ffd700;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Glowing Stars */
-    display: block; /* Ensure it takes a line */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    /* Glowing Stars */
+    display: block;
+    /* Ensure it takes a line */
 }
 
 /* Quote Text */
@@ -1744,6 +1812,7 @@ footer::before {
     font-size: 0.85rem;
     display: block;
 }
+
 /* =========================================
    Cart & Checkout Styles
    ========================================= */
@@ -1888,12 +1957,16 @@ footer::before {
 
 
 .checkout-btn {
-    width: 90% !important;           /* 100% se kam kiya taake side pe jagah bache */
-    margin-left: auto !important;    /* Left side se khud adjust ho */
-    margin-right: auto !important;   /* Right side se khud adjust ho */
-    display: block !important;       /* Center karne ke liye zaroori hai */
-    
-    padding: 12px 0 !important;      
+    width: 90% !important;
+    /* 100% se kam kiya taake side pe jagah bache */
+    margin-left: auto !important;
+    /* Left side se khud adjust ho */
+    margin-right: auto !important;
+    /* Right side se khud adjust ho */
+    display: block !important;
+    /* Center karne ke liye zaroori hai */
+
+    padding: 12px 0 !important;
     font-size: 16px !important;
     margin-top: 15px !important;
     border-radius: 50px !important;
@@ -2015,10 +2088,12 @@ footer::before {
     background: #E63946;
     border-radius: 10px;
 }
+
 /* --- Filter Buttons Alignment Fix --- */
 .filter-buttons {
     display: flex;
-    justify-content: flex-end !important; /* Right side par lane ke liye */
+    justify-content: flex-end !important;
+    /* Right side par lane ke liye */
     flex-wrap: wrap;
     gap: 10px;
     width: 100%;
@@ -2036,12 +2111,14 @@ footer::before {
    ========================================= */
 
 @media (max-width: 992px) {
+
     /* Tablet Fixes */
-    .about-grid, .contact-grid {
+    .about-grid,
+    .contact-grid {
         grid-template-columns: 1fr !important;
         gap: 3rem;
     }
-    
+
     .hero {
         flex-direction: column;
         justify-content: center;
@@ -2050,49 +2127,85 @@ footer::before {
         height: auto !important;
         min-height: 100vh;
     }
-    
-    .hero h1 { font-size: 3rem; }
-    .hero-img img { max-width: 60%; }
-    .cta-group { justify-content: center; }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero-img img {
+        max-width: 60%;
+    }
+
+    .cta-group {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 768px) {
+
     /* 1. HERO SECTION FIX (Text Overlap Fix) */
     .hero {
         padding-top: 140px !important;
         padding-bottom: 80px !important;
         justify-content: flex-start;
     }
-    
-    .hero h1 { font-size: 2.5rem !important; line-height: 1.2; }
-    .hero p { font-size: 1.1rem !important; margin-bottom: 2rem; }
-    
+
+    .hero h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1.1rem !important;
+        margin-bottom: 2rem;
+    }
+
     /* 2. MENU SCROLL FIX (Buttons Cut-off Fix) */
     .nav-links {
         position: fixed;
-        top: 0; right: -100%;
-        width: 80%; height: 100vh !important;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh !important;
         background: var(--darker);
         flex-direction: column;
         justify-content: flex-start !important;
         padding-top: 100px !important;
-        padding-bottom: 150px !important; /* Extra space for scrolling */
-        overflow-y: auto !important;      /* Scroll ON */
+        padding-bottom: 150px !important;
+        /* Extra space for scrolling */
+        overflow-y: auto !important;
+        /* Scroll ON */
         transition: right 0.4s ease;
         z-index: 999;
     }
-    
-    .nav-links.active { right: 0; }
-    .nav-links li { margin: 15px 0; flex-shrink: 0; }
-    
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        flex-shrink: 0;
+    }
+
     /* 3. BUTTONS & GRID FIX */
-    .cta-group { flex-direction: column; width: 100%; gap: 15px; align-items: center; }
-    .btn { width: 90% !important; }
-    
-    .menu-grid, .services-grid, .features-grid {
+    .cta-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .btn {
+        width: 90% !important;
+    }
+
+    .menu-grid,
+    .services-grid,
+    .features-grid {
         grid-template-columns: 1fr !important;
     }
-    
+
     /* 4. GREEN BUTTON CENTER FIX */
     .checkout-btn {
         width: 90% !important;
@@ -2100,29 +2213,35 @@ footer::before {
         display: flex !important;
         justify-content: center;
     }
-    
+
     /* 5. FILTER BUTTONS CENTER */
-    .filter-buttons { justify-content: center !important; }
+    .filter-buttons {
+        justify-content: center !important;
+    }
 }
+
 /* =========================================
    CART MODAL FINAL POLISH (Add at bottom)
    ========================================= */
 
 @media (max-width: 768px) {
-    
+
     /* 1. Scrollbar Chupao (Lekin scroll chalega) */
     .cart-items::-webkit-scrollbar {
-        width: 4px; /* Bilkul patla scrollbar */
+        width: 4px;
+        /* Bilkul patla scrollbar */
     }
-    
+
     .cart-items {
-        max-height: 40vh !important; /* List ki height fix ki */
+        max-height: 40vh !important;
+        /* List ki height fix ki */
         padding-right: 5px;
     }
 
     /* 2. Total Amount Center Karo */
     .cart-total {
-        justify-content: center !important; /* Center mein laye */
+        justify-content: center !important;
+        /* Center mein laye */
         text-align: center !important;
         margin-top: 10px !important;
         padding-top: 10px !important;
@@ -2131,25 +2250,30 @@ footer::before {
 
     /* 3. Button ko Full Width aur Fit Karo */
     .checkout-btn {
-        width: 100% !important; /* Pura faila diya */
+        width: 100% !important;
+        /* Pura faila diya */
         margin-top: 15px !important;
-        margin-bottom: 10px !important; /* Neeche thori jagah di */
+        margin-bottom: 10px !important;
+        /* Neeche thori jagah di */
         padding: 12px 0 !important;
-        border-radius: 12px !important; /* Thora square rakha taake app jaisa lage */
+        border-radius: 12px !important;
+        /* Thora square rakha taake app jaisa lage */
     }
-    
+
     /* 4. Modal ki Padding Set ki */
     .modal-content {
         padding: 20px !important;
-        width: 95% !important; /* Mobile screen par thora khula dikhe */
+        width: 95% !important;
+        /* Mobile screen par thora khula dikhe */
     }
 }
+
 /* =========================================
    SIDE-BY-SIDE CART (Total & Button)
    ========================================= */
 
 @media (max-width: 768px) {
-    
+
     /* 1. Modal Footer Area (Invisible Container) */
     .cart-modal-content {
         padding-bottom: 20px !important;
@@ -2159,9 +2283,11 @@ footer::before {
     /* 2. Total Amount (Left Side) */
     .cart-total {
         display: inline-block !important;
-        width: 45% !important;      /* Aadho aadh jagah le */
+        width: 45% !important;
+        /* Aadho aadh jagah le */
         text-align: left !important;
-        border-top: none !important; /* Line hata di */
+        border-top: none !important;
+        /* Line hata di */
         margin-top: 20px !important;
         font-size: 1.2rem !important;
         vertical-align: middle !important;
@@ -2171,16 +2297,27 @@ footer::before {
     /* 3. Checkout Button (Right Side) */
     .checkout-btn {
         display: inline-flex !important;
-        width: 50% !important;      /* Baaki jagah button le */
+        width: 50% !important;
+        /* Baaki jagah button le */
         margin-top: 15px !important;
         padding: 10px 0 !important;
-        float: right !important;    /* Right side par chipka diya */
+        float: right !important;
+        /* Right side par chipka diya */
         font-size: 0.9rem !important;
         vertical-align: middle !important;
     }
-    
+
     /* Scrollbar ko patla kiya taake safai rahe */
     .cart-items::-webkit-scrollbar {
         width: 3px;
     }
+}
+
+/* =========================================
+   MOBILE HEADER FIX (Cart Icon Visibility)
+   ========================================= */
+
+/* Desktop par "Order Now" dikhao, Mobile par chupao */
+.desktop-only {
+    display: block;
 }
